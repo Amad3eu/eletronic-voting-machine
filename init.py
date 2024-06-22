@@ -10,6 +10,7 @@ while eleitores > 0:
     print("\n-----------------------------------")
     print("Bem-vindo à urna eletrônica!")
     print("Restam", eleitores, "eleitores para votar.")
+    print("Digite 00 para fechar a urna.")
     print("-----------------------------------\n")
 
     # Solicita o voto para prefeito
@@ -18,6 +19,13 @@ while eleitores > 0:
         "1 - Prefeito 1\n2 - Prefeito 2\n3 - Prefeito 3\n4 - Prefeito 4\n0 - Nulo\n-1 - Branco"
     )
     voto_prefeito = int(input("Digite o número do seu voto: "))
+
+    # Opção para fechar a urna
+    if voto_prefeito == 00:
+        fechar_urna = input("Deseja fechar a urna? (s/n): ")
+        if fechar_urna.lower() == "s":
+            print("A urna foi fechada.")
+            break
 
     # Contagem dos votos para prefeito
     if voto_prefeito == 1:
@@ -44,6 +52,12 @@ while eleitores > 0:
     print("0 - Nulo\n-1 - Branco")
     voto_vereador = int(input("Digite o número do seu voto: "))
 
+    # Opção para fechar a urna
+    if voto_vereador == 00:
+        fechar_urna = input("Deseja fechar a urna? (s/n): ")
+        if fechar_urna.lower() == "s":
+            print("A urna foi fechada.")
+            break
     # Contagem dos votos para vereador
     if voto_vereador == 1:
         vereador1 += 1
