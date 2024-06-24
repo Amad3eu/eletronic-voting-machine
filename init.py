@@ -13,18 +13,31 @@ while eleitores > 0:
     print("Digite 00 para fechar a urna.")
     print("-----------------------------------\n")
 
-    # Solicita o voto para prefeito
-    print("Votação para prefeito:")
-    print(
-        "1 - Prefeito 1\n2 - Prefeito 2\n3 - Prefeito 3\n4 - Prefeito 4\n0 - Nulo\n-1 - Branco"
-    )
-    voto_prefeito = int(input("Digite o número do seu voto: "))
+    compareceu = input("O eleitor compareceu? (s/n): ")
+    if compareceu.lower() != "s":
+        print("Eleitor não compareceu.")
+        eleitores -= 1
+        continue
 
-    # Opção para fechar a urna
-    if voto_prefeito == 00:
-        fechar_urna = input("Deseja fechar a urna? (s/n): ")
-        if fechar_urna.lower() == "s":
-            print("A urna foi fechada.")
+    # Solicita o voto para prefeito
+    while True:
+        print("\nVotação para prefeito:")
+        print(
+            "1 - Prefeito 1\n2 - Prefeito 2\n3 - Prefeito 3\n4 - Prefeito 4\n0 - Nulo\n-1 - Branco"
+        )
+        voto_prefeito = input("Digite o número do seu voto: ")
+
+        # Opção para fechar a urna
+        if voto_prefeito == "00":
+            fechar_urna = input("Deseja fechar a urna? (s/n): ")
+            if fechar_urna.lower() == "s":
+                print("A urna foi fechada.")
+                exit()
+            continue
+
+        confirmar = input(f"Confirma voto em {voto_prefeito}? (s/n): ")
+        if confirmar.lower() == "s":
+            voto_prefeito = int(voto_prefeito)
             break
 
     # Contagem dos votos para prefeito
@@ -42,22 +55,30 @@ while eleitores > 0:
         votos_brancos += 1
 
     # Solicita o voto para vereador
-    print("\nVotação para vereador:")
-    print(
-        "1 - Vereador 1\n2 - Vereador 2\n3 - Vereador 3\n4 - Vereador 4\n5 - Vereador 5"
-    )
-    print(
-        "6 - Vereador 6\n7 - Vereador 7\n8 - Vereador 8\n9 - Vereador 9\n10 - Vereador 10"
-    )
-    print("0 - Nulo\n-1 - Branco")
-    voto_vereador = int(input("Digite o número do seu voto: "))
+    while True:
+        print("\nVotação para vereador:")
+        print(
+            "1 - Vereador 1\n2 - Vereador 2\n3 - Vereador 3\n4 - Vereador 4\n5 - Vereador 5"
+        )
+        print(
+            "6 - Vereador 6\n7 - Vereador 7\n8 - Vereador 8\n9 - Vereador 9\n10 - Vereador 10"
+        )
+        print("0 - Nulo\n-1 - Branco")
+        voto_vereador = input("Digite o número do seu voto: ")
 
-    # Opção para fechar a urna
-    if voto_vereador == 00:
-        fechar_urna = input("Deseja fechar a urna? (s/n): ")
-        if fechar_urna.lower() == "s":
-            print("A urna foi fechada.")
+        # Opção para fechar a urna
+        if voto_vereador == "00":
+            fechar_urna = input("Deseja fechar a urna? (s/n): ")
+            if fechar_urna.lower() == "s":
+                print("A urna foi fechada.")
+                exit()
+            continue
+
+        confirmar = input(f"Confirma voto em {voto_vereador}? (s/n): ")
+        if confirmar.lower() == "s":
+            voto_vereador = int(voto_vereador)
             break
+
     # Contagem dos votos para vereador
     if voto_vereador == 1:
         vereador1 += 1
