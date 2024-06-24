@@ -3,7 +3,7 @@ prefeito1, prefeito2, prefeito3, prefeito4 = 0, 0, 0, 0
 vereador1, vereador2, vereador3, vereador4, vereador5 = 0, 0, 0, 0, 0
 vereador6, vereador7, vereador8, vereador9, vereador10 = 0, 0, 0, 0, 0
 votos_nulos, votos_brancos = 0, 0
-eleitores = 5
+eleitores = 40
 
 # Simulação da votação
 while eleitores > 0:
